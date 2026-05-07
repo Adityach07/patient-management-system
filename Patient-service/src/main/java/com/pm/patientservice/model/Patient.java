@@ -12,6 +12,7 @@ import java.util.UUID;
 
 
 @Entity
+@Table(name = "patient")
 public class Patient {
 
     @Id
@@ -31,11 +32,11 @@ public class Patient {
     private  String address;
 
     @NotNull
-    private LocalDate birthDate;
+    private LocalDate date_of_birth;
 
 
     @NotNull
-    private LocalDate registrationDate;
+    private LocalDate registered_date;
 
 
     public UUID getId() {
@@ -70,19 +71,19 @@ public class Patient {
         this.address = address;
     }
 
-    public LocalDate getBirthDate() {
-        return birthDate;
+    public LocalDate getDate_of_birth() {
+        return date_of_birth;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
+    public void setDate_of_birth(LocalDate date_of_birth) {
+        this.date_of_birth = date_of_birth;
     }
 
-    public LocalDate getRegistrationDate() {
-        return registrationDate;
+    public LocalDate getRegistered_date() {
+        return registered_date;
     }
 
-    public void setRegistrationDate(LocalDate registrationDate) {
-        this.registrationDate = registrationDate;
+    public void setRegistered_date(LocalDate registered_date) {
+        this.registered_date = registered_date;
     }
 }
