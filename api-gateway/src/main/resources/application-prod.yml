@@ -1,0 +1,46 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        # Route to Patient Service
+        - id: patient-service
+          uri: ${PATIENT_SERVICE_URI:http://host.docker.internal:4000}
+          predicates:
+            - Path=/api/patients/**
+          filters:
+            - StripPrefix=1  # <-- Strips "/api" and forwards "/patients/**"
+            - JwtValidation
+
+        # Route to Billing Service
+        - id: billing-service
+          uri: ${BILLING_SERVICE_URI:http://localhost:4001}
+          predicates:
+            - Path=/api/billing/**, /api/bills/**
+          filters:
+            - StripPrefix=1
+
+        # Route to Analytics Service
+        - id: analytics-service
+          uri: ${ANALYTICS_SERVICE_URI:http://localhost:5000}
+          predicates:
+            - Path=/api/analytics/**
+          filters:
+            - StripPrefix=1
+
+
+        # Route to Auth Service
+        - id: auth-service
+          uri: ${AUTH_SERVICE_URI:http://localhost:4005}
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - StripPrefix=1
+
+auth:
+  service:
+    url: ${AUTH_SERVICE_URI:http://localhost:4005}

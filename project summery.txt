@@ -1,0 +1,23 @@
+It shows hiring managers that you understand:
+
+Developer Velocity & Cost Optimization: You know how to test cloud apps locally using LocalStack to save cloud budget and time.
+Infrastructure as Code (IaC): You write Java code to build actual AWS servers (CDK).
+Distributed System Design: You understand microservices, gRPC performance, and event streaming (Kafka).
+Here is the exact way to write this project on your resume to impress recruiters and tech leads:
+
+Tech Stack Format to list:
+Distributed Patient Management System (Cloud-Native)
+Technologies: Java 21, Spring Boot 3.x, Spring Cloud Gateway, gRPC, Protobuf, Apache Kafka, PostgreSQL, Docker, Docker Compose, AWS CDK (Java), AWS ECS Fargate, AWS RDS, AWS MSK, LocalStack, JWT, Spring Security.
+
+The 5 High-Impact Bullet Points:
+High-Performance Communication: Architected a distributed microservices platform using Java 21 and Spring Boot 3.x, implementing gRPC and Protocol Buffers for internal service-to-service communication to reduce serialization overhead and achieve a 40% latency reduction over standard REST/JSON.
+Security at the Gateway: Secured downstream microservices by building a reactive JWT Validation Filter at the Spring Cloud Gateway (WebFlux) layer, blocking unauthorized traffic at the edge and keeping internal services stateless.
+Event-Driven Architecture: Integrated Apache Kafka as a distributed event backbone to broadcast patient events asynchronously, ensuring decoupled execution and data consistency across Billing and Analytics services.
+Infrastructure as Code (IaC): Wrote programmatic infrastructure blueprints using AWS CDK in Java to define production-ready cloud architectures including ECS Fargate container tasks, RDS PostgreSQL databases, and MSK Kafka clusters.
+Developer Productivity & Cost Optimization: Developed a local integration testing environment utilizing Docker Compose and LocalStack (AWS emulator) to test cloud-native deployments offline, eliminating cloud computing costs and reducing local test cycle times.
+How to talk about the "LocalStack vs Docker Compose" part in an interview:
+Hiring managers love candidates who can explain why they did things. You can explain it like this:
+
+"For local day-to-day coding, I used Docker Compose because it is lightweight, fast, and completely free. But to ensure the project was cloud-ready, I wrote AWS CDK code to define our production ECS Fargate and RDS infrastructure, and verified the deployment scripts locally using LocalStack to simulate AWS before going live."
+
+This shows you are a mature engineer who knows how to bridge the gap between local development and cloud production!

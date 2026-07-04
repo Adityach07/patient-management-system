@@ -31,11 +31,12 @@ public class PatientController {
 
 
     @PostMapping
-    public ResponseEntity<PatientResponseDTO> savePatient(@RequestBody PatientRequestDTO patientRequestDTO) {
+    public ResponseEntity<PatientResponseDTO> savePatient(@Validated @RequestBody PatientRequestDTO patientRequestDTO) {
         PatientResponseDTO patient = patientService.createPatient(patientRequestDTO);
         return ResponseEntity.ok().body(patient);
     }
 
+   @PutMapping("/{id}")
     public ResponseEntity<PatientResponseDTO> updatePatient(
             @PathVariable UUID id,
 
@@ -48,5 +49,11 @@ public class PatientController {
         return ResponseEntity.ok().body(patientResponseDTO);
     }
 
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletePatient(@PathVariable UUID id) {
+        patientService.deletePatient(id);
+        return ResponseEntity.noContent().build();
+    }
 
 }

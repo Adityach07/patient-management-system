@@ -1,0 +1,34 @@
+# Maven / Java Build Outputs
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+
+# IntelliJ IDEA Project Files
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# AWS CDK Output
+**/cdk.out/
+.cdk.staging/
+
+# LocalStack Data & Docker Logs
+localstack-data/
+.localstack/
+*.log
+
+# Windows / OS Specific Files
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Secrets & Environment Variables
+.env
+.env.*
+*.pem
+*.key
+credentials.json
